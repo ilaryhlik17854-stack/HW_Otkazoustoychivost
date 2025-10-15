@@ -6,7 +6,7 @@
 ## **Задание 1**
 
 * Дана схема для Cisco Packet Tracer, рассматриваемая в лекции.
-![Схема задания](https://github.com/username/reponame/blob/branch/path/image.png)
+![Схема задания](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP&Keepalived/img/1-ShemaHSRP.png?raw=true)
 * На данной схеме уже настроено отслеживание интерфейсов маршрутизаторов Gi0/1 (для нулевой группы)
 * Необходимо аналогично настроить отслеживание состояния интерфейсов Gi0/0 (для первой группы).
 * Для проверки корректности настройки, разорвите один из кабелей между одним из маршрутизаторов и Switch0 и запустите ping между PC0 и Server0.
@@ -16,7 +16,7 @@
 
 ## **Решение 1**
 
-[Ссылка на файл с готовым заданием]()
+[hsrp_advanced_rukhlik.pkt](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP%26Keepalived/hsrp_advanced_rukhlik.pkt)
 
 show running-config router1 for ininterface GigabitEthernet0/0-1
 
@@ -72,9 +72,9 @@ interface GigabitEthernet0/1
 !
 ```
  
-![Разорвана связь SW0_R2)](https://github.com/username/reponame/blob/branch/path/image.png)
+![Разорвана связь SW0_R2)](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP&Keepalived/img/3_SW0_R2.png?raw=true)
 
-![Разорвана связь SW0_R1](https://github.com/username/reponame/blob/branch/path/image.png)
+![Разорвана связь SW0_R1](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP&Keepalived/img/2_SW0_R1.png?raw=true)
 
 ---
 
@@ -96,7 +96,7 @@ Virtual ip - 192.168.100.45
 
 На Master - (hostname:debian12) ip address 192.168.100.154 создадим скрипт для проверки доступности хоста и стартовой страницы nginx
 
-[script_keepalived.sh]()
+[script_keepalived.sh](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP%26Keepalived/script_keepalived.sh)
 
 ```bash
 #!/bin/bash
@@ -111,7 +111,7 @@ fi
 ```
 
 задаем конфигурационный файл keepalived на master debian12
-[keepalived_debian12.conf]()
+[keepalived_debian12.conf](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP%26Keepalived/keepalived_debian12.conf)
 
 ```conf
 vrrp_script bash_keepal {
@@ -137,7 +137,7 @@ vrrp_instance VI_1 {
 ```
 
 задаем конфигурационный файл keepalived на backup debian11
-[keepalived_debian11.conf]()
+[keepalived_debian11.conf](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP%26Keepalived/keepalived_debian11.conf)
 ```conf
 vrrp_instance VI_1 {
     state BACKUP
@@ -155,9 +155,9 @@ vrrp_instance VI_1 {
 
 зайдем на страницу virtual ip http://192.168.100.45
 
-![SERV1](https://github.com/username/reponame/blob/branch/path/image.png)
+![SERV1](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP&Keepalived/img/5_SERV2.png?raw=true)
 
 на DEBIAN 12 отключим службу nginx
 
-![SERV2](https://github.com/username/reponame/blob/branch/path/image.png)
+![SERV2](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP&Keepalived/img/4_SERV1.png?raw=true)
 
