@@ -10,15 +10,11 @@
 * Настройте балансировку Round-robin на 4 уровне.
 * На проверку направьте конфигурационный файл haproxy, скриншоты, где видно перенаправление запросов на разные серверы при обращении к HAProxy.
 
-
-![Схема задания](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP&Keepalived/img/1-ShemaHSRP.png?raw=true)
-
-
 ---
 
 ## **Решение 1**
 
-[haprogy.cfg](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP%26Keepalived/hsrp_advanced_rukhlik.pkt)
+[haprogy.cfg](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/haproxyZD1.cfg)
 
 ```cfg
 global
@@ -88,6 +84,8 @@ listen web_tcp
 ```
 для имитации нагрузки используем bash скрипт
 
+[Zapros.sh](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/Zapros.sh)
+
 ```bash
 #!/bin/bash  
   
@@ -102,9 +100,9 @@ while true; do
   sleep $delay 
   done
 ```
-![Схема задания](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP&Keepalived/img/1-ShemaHSRP.png?raw=true)
+![1_bash](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/img/1_bash.png?raw=true)
 
-![Схема задания](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP&Keepalived/img/1-ShemaHSRP.png?raw=true)
+![2_stat](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/img/2_stat.png?raw=true)
 
 ---
 
@@ -119,7 +117,7 @@ while true; do
 
 ## **Решение 2**
 
-[haprogy.cfg](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP%26Keepalived/hsrp_advanced_rukhlik.pkt)
+[haprogy.cfg](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/haproxyZD2.cfg)
 
 ```cfg
 global
@@ -180,7 +178,7 @@ backend web_servers    # секция бэкенд
         server s2 127.0.0.1:9999 weight 3 check
 		server s3 127.0.0.1:7777 weight 4 check
 ```
-[Zapros.sh](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP%26Keepalived/hsrp_advanced_rukhlik.pkt)
+[ZaprosZD2.sh](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/ZaprosZD2.sh)
 
 ```bash
 #!/bin/bash  
@@ -197,6 +195,8 @@ while true; do
   done
 ```
 
-![Схема задания](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP&Keepalived/img/1-ShemaHSRP.png?raw=true)
+![3_bash](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/img/3_bash.png?raw=true)
 
-![Схема задания](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/1%20-%20HSRP&Keepalived/img/1-ShemaHSRP.png?raw=true)
+![4_bash](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/img/4_bash.png?raw=true)
+
+![5_stat](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/img/5_stat.png?raw=true)
