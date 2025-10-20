@@ -18,9 +18,9 @@
 rsync -a --checksum --delete --progress --exclude '.*' /home/debian/ /tmp/backup
 ```
 
-![1_rsync1](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/img/6_stat.png?raw=true)
+![1_rsync1](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/3%20-%20BackUp/img/1_rsync1.png?raw=true)
 
-![2_ls-la](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/img/6_stat.png?raw=true)
+![2_ls-la](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/3%20-%20BackUp/img/2_ls-la.png?raw=true)
 
 ---
 
@@ -36,7 +36,7 @@ rsync -a --checksum --delete --progress --exclude '.*' /home/debian/ /tmp/backup
 
 ## **Решение 2**
 
-Создаем скрипт в домашенм каталоге [rsync_ryh.sh](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/Zapros.sh)
+Создаем скрипт в домашенм каталоге [rsync_ryh.sh](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/3%20-%20BackUp/rsync_ryh.sh)
 
 с помощью команды crontab -e создаем задачу для нашего пользователя
 
@@ -44,7 +44,7 @@ rsync -a --checksum --delete --progress --exclude '.*' /home/debian/ /tmp/backup
 ```
 0 12 * * * /home/debian/rsync_ryh.sh
 ```
-для ускорения процесса мы применили в файле [crontab](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/Zapros.sh) запуск каждые 3 минуты
+для ускорения процесса мы применили в файле [crontab](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/3%20-%20BackUp/crontab) запуск каждые 3 минуты
 
-![3_varlog](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/img/6_stat.png?raw=true)
+![3_varlog](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/3%20-%20BackUp/img/3_varlog.png?raw=true)
 
