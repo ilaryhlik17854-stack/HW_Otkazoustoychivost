@@ -94,7 +94,7 @@ delay=0.2
   
 while true; do  
   # Отправляем запрос  
-  curl -s http://localhost:8088  
+  curl -s http://localhost:1325  
     
   # Ждем заданное время перед следующим запросом  
   sleep $delay 
@@ -102,7 +102,7 @@ while true; do
 ```
 ![1_bash](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/img/1_bash.png?raw=true)
 
-![2_stat](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/img/2_stat.png?raw=true)
+![2_stat](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/2%20-%20Clustering%20and%20load%20balancing/img/6_stat.png?raw=true)
 
 ---
 
