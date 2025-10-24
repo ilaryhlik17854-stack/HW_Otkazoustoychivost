@@ -1,0 +1,29 @@
+#cloud-config
+users:
+  - name: user
+    groups: sudo
+    shell: /bin/bash
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJVRz6IJ86Jue8vNV/XF2oCXB0bnZYsHWCKqeHJsL2wW debian@debian12
+
+disable_root: true
+timezone: Europe/Moscow
+repo_update: true
+apt:
+   preserve_sources_list: true
+packages:
+  - nginx
+
+runcmd:
+  - [ systemctl, nginx-reload ]
+  - [ systemctl, enable, nginx.service ]
+  - [ systemctl, start, --no-block, nginx.service ]
+
+write_files:
+  - path: /var/www/html/index.nginx-debian.html 
+    content: |
+      SERVER # NETOLOHY RUKHLIK
+    
+    owner: 'root:root'
+    permissions: '0644'
