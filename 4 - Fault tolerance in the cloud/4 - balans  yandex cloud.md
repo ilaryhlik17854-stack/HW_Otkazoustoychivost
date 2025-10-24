@@ -36,7 +36,7 @@
 ## **Решение 2**
 
 terraform playbook 
-[main.tf](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/3%20-%20BackUp/rsync_ryh.sh)
+[main.tf](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/4%20-%20Fault%20tolerance%20in%20the%20cloud/img/main.tf)
 
 ```tf
 terraform {
@@ -150,7 +150,7 @@ output "external_ip_address_vm_1" {
 }
 ```
 
-[variables.tf](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/3%20-%20BackUp/rsync_ryh.sh)
+[variables.tf](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/4%20-%20Fault%20tolerance%20in%20the%20cloud/img/variables.tf)
 
 ```tf
 variable "cloud_id" {
@@ -164,7 +164,7 @@ variable "folder_id" {
 
 ```
 
-[cloud-init.yml](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/3%20-%20BackUp/rsync_ryh.sh)
+[cloud-init.yml](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/4%20-%20Fault%20tolerance%20in%20the%20cloud/img/cloud-init.yml)
 
 ```yml
 #cloud-config
@@ -201,17 +201,17 @@ write_files:
 
 Скриншот статуса балансировщика и целевой группы.
 
-[!1-balans](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/3%20-%20BackUp/img/3_varlog.png?raw=true)
+[!1-balans](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/4%20-%20Fault%20tolerance%20in%20the%20cloud/img/1-balans.png?raw=true)
 
 запрос к серверу VM0
-![2-httpVM0.png](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/3%20-%20BackUp/img/3_varlog.png?raw=true)
+![2-httpVM0.png](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/4%20-%20Fault%20tolerance%20in%20the%20cloud/img/2-httpVM0.png?raw=true)
 
 запрос к серверу VM1
-![3-httpVM1.png](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/3%20-%20BackUp/img/3_varlog.png?raw=true)
+![3-httpVM1.png](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/4%20-%20Fault%20tolerance%20in%20the%20cloud/img/3-httpVM1.png?raw=true)
 
 запрос к балансировщику
-![4-httpBAL.png](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/3%20-%20BackUp/img/3_varlog.png?raw=true)
+![4-httpBAL.png](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/4%20-%20Fault%20tolerance%20in%20the%20cloud/img/4-httpBAL.png?raw=true)
 
 имитация нагрузки на балансировщик yandex.vloud
-![5-script.png](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/3%20-%20BackUp/img/3_varlog.png?raw=true)
+![5-script.png](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/4%20-%20Fault%20tolerance%20in%20the%20cloud/img/5-script.png?raw=true)
 
