@@ -201,7 +201,7 @@ write_files:
 
 Скриншот статуса балансировщика и целевой группы.
 
-[!1-balans](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/4%20-%20Fault%20tolerance%20in%20the%20cloud/img/1-balans.png?raw=true)
+![1-balans](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/4%20-%20Fault%20tolerance%20in%20the%20cloud/img/1-balans.png?raw=true)
 
 запрос к серверу VM0
 ![2-httpVM0.png](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/4%20-%20Fault%20tolerance%20in%20the%20cloud/img/2-httpVM0.png?raw=true)
@@ -212,6 +212,6 @@ write_files:
 запрос к балансировщику
 ![4-httpBAL.png](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/4%20-%20Fault%20tolerance%20in%20the%20cloud/img/4-httpBAL.png?raw=true)
 
-имитация нагрузки на балансировщик yandex.vloud
+имитация нагрузки на балансировщик yandex.cloud
 ![5-script.png](https://github.com/ilaryhlik17854-stack/HW_Otkazoustoychivost/blob/main/4%20-%20Fault%20tolerance%20in%20the%20cloud/img/5-script.png?raw=true)
 
